@@ -6,21 +6,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView1Share"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Code"
-            android:textSize="16dp"
-            />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@id/textView1Share"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:hint="Code"
             android:id="@+id/codeShare"
             android:background="@android:drawable/editbox_background"
@@ -33,7 +24,7 @@
             android:textColor="@android:color/background_light"
             android:id="@+id/saveBtnShare"
             android:layout_below="@id/codeShare"
-            android:text="Save"
-            android:layout_marginTop="10dp"/>
+            android:text="Share"
+            android:layout_marginTop="20dp"/>
     </RelativeLayout>
 </ScrollView>
