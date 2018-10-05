@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.httpsgocentralph.mirroringwebrtc.Fragment.ConnectFragment;
+import com.httpsgocentralph.mirroringwebrtc.Fragment.ShareFragment;
+
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -36,10 +39,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_share:
-                // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HouseHoldFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShareFragment()).commit();
                 break;
             case R.id.nav_connect:
-                // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DependentsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ConnectFragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
