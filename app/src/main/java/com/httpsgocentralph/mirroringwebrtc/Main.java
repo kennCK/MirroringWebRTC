@@ -31,7 +31,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         if(savedInstanceState == null) {
-            navigationView.setCheckedItem(R.id.nav_head);
+            navigationView.setCheckedItem(R.id.nav_share);
         }
     }
 
