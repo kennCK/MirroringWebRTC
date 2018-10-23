@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/connections"
+        />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:hint="Code"
-            android:id="@+id/codeShare"
-            android:background="@android:drawable/editbox_background"
-            android:inputType="number"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/background_light"
-            android:id="@+id/saveBtnShare"
-            android:layout_below="@id/codeShare"
-            android:text="Share"
-            android:layout_marginTop="20dp"/>
-    </RelativeLayout>
-</ScrollView>
+</RelativeLayout>
