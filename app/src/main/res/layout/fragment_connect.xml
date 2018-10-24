@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
+    <view
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:hint="Code"
-            android:id="@+id/codeConnect"
-            android:background="@android:drawable/editbox_background"
-            android:inputType="number"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/background_light"
-            android:id="@+id/saveBtnConnect"
-            android:layout_below="@id/codeConnect"
-            android:text="Connect"
-            android:layout_marginTop="20dp"/>
-    </RelativeLayout>
-</ScrollView>
+        android:layout_height="match_parent"
+        class="io.skyway.Peer.Browser.Canvas"
+        android:id="@+id/svLocalView"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp" />
+</RelativeLayout>
