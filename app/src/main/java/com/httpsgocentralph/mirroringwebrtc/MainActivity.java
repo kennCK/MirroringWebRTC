@@ -4,8 +4,12 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.display.VirtualDisplay;
 import android.media.AudioManager;
+import android.media.projection.MediaProjection;
+import android.media.projection.MediaProjectionManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -54,6 +58,16 @@ public class MainActivity extends Activity {
 	private MediaStream		_remoteStream;
 	private MediaConnection	_mediaConnection;
 
+	MediaProjectionManager mediaProjectionManager;
+	MediaProjection mediaProjection;
+	VirtualDisplay virtualDisplay;
+
+	final int RECORDCODEREQUEST = 500;
+	private final int WIDTH = 180;
+	private final int HEIGHT = 320;
+	int screenDensity;
+
+
 	private String _strOwnId;
 	private boolean			_bConnected;
 
@@ -69,6 +83,10 @@ public class MainActivity extends Activity {
 		Window wnd = getWindow();
 		wnd.addFlags(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main_videochat);
+
+
+		mediaProjectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
+
 		//
 		// Set UI handler
 		//
@@ -193,6 +211,24 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+
+
+	public void askRecordPermission(){
+		if(mediaProjection == null){
+			startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), RECORDCODEREQUEST);
+		}else{
+			Log.v("Recording:", "Stop");
+		}
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == RECORDCODEREQUEST && resultCode == RESULT_OK && data != null){
+			mediaProjection = mediaProjectionManager.getMediaProjection(resultCode, data);
+		}
+	}
+
 
 	//
 	// onRequestPermissionResult
