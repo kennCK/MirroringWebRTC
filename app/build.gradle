@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation (name:'skyway',ext:'aar')
+    implementation (name:'google-webrtc-1.0.19742',ext:'aar')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
